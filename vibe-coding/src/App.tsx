@@ -1,298 +1,206 @@
 import './App.css'
-import logo from './assets/vibe-code-leaders-logo.svg'
 
 function App() {
+  const quotes = [
+    {
+      q: "Vibe‑coding рушит барьеры для создания приложений. Теперь любой человек может завибкодить приложение за считанные секунды.",
+      a: "Mustafa Suleyman",
+      r: "CEO Microsoft AI"
+    },
+    {
+      q: "Это сдвиг, который может поставить под вопрос саму защищённость традиционного софта и классической разработки.",
+      a: "Mustafa Suleyman",
+      r: "CEO Microsoft AI"
+    },
+    {
+      q: "Руководители, игнорирующие меняющийся ландшафт разработки софта, рискуют сделать себя и свои компании устаревшими. Vibe‑coding уже происходит сегодня.",
+      a: "Craig Beebe",
+      r: "Tech Visionary & Executive"
+    },
+    {
+      q: "Те руководители, кто экспериментирует с vibe‑coding уже сегодня, завтра будут задавать темп в своих индустриях.",
+      a: "Craig Beebe",
+      r: "Tech Visionary & Executive"
+    },
+    {
+      q: "Vibe‑coding делает программирование куда более увлекательным: люди могут экспериментировать с приложениями и сайтами без какого‑либо опыта в коде.",
+      a: "Sundar Pichai",
+      r: "CEO Google"
+    },
+    {
+      q: "Раньше вы просто описывали идею. Теперь вы можете немного завибкодить её и сразу показать людям.",
+      a: "Sundar Pichai",
+      r: "CEO Google"
+    },
+    {
+      q: "Это и поразительно, и самое слабое состояние технологии, которое мы когда‑либо увидим. Я не могу дождаться, чтобы увидеть, что мир построит на этом.",
+      a: "Sundar Pichai",
+      r: "CEO Google"
+    },
+    {
+      q: "Переход к ИИ‑агентам — это не просто повышение эффективности. Это переосмысляет то, как устроены SaaS‑продукты и как вообще делается работа в цифровом бизнесе.",
+      a: "Satya Nadella",
+      r: "CEO Microsoft"
+    },
+    {
+      q: "Некоторые компании радикально полностью убирают людей из ключевых частей бизнес‑модели и перестраивают её вокруг ИИ‑агентов.",
+      a: "Magnus Grimeland",
+      r: "Investor & Entrepreneur"
+    }
+  ];
+
+  // Double quotes for seamless marquee
+  const marqueeQuotes = [...quotes, ...quotes];
+
   return (
-    <div className="page">
+    <div className="app-container">
       <header className="header">
-        <div className="header-left">
-          <img src={logo} className="brand-logo" alt="Vibe Code Leaders logo" />
-          <div className="brand-text">
-            <span className="brand-name">Vibe Code Leaders</span>
-            <span className="brand-tagline">
-              Руководители, которые думают как разработчики
-            </span>
-          </div>
-        </div>
+        <div className="logo">VibeCode Leaders</div>
         <nav className="nav">
-          <a href="#for-whom">Для кого</a>
-          <a href="#results">Результаты</a>
+          <a href="#about">О курсе</a>
+          <a href="#concierge">Консьерж</a>
           <a href="#program">Программа</a>
           <a href="#pricing">Тарифы</a>
-          <a href="#faq">FAQ</a>
         </nav>
-        <div className="header-actions">
-          <button className="btn btn-ghost">Войти</button>
-          <button className="btn btn-primary">Записаться</button>
-        </div>
+        <button className="header-btn">Записаться</button>
       </header>
 
-      <main className="main">
+      <main>
+        {/* HERO SECTION */}
         <section className="hero">
-          <div className="hero-text">
-            <h1>
-              Курс по коду
-              <br />
-              для амбициозных руководителей
-            </h1>
-            <p className="hero-subtitle">
-              Пойми, как думает разработчик, научись говорить с командой на одном
-              языке и принимай решения быстрее благодаря структуре из мира
-              программирования.
-            </p>
-            <div className="hero-actions">
-              <button className="btn btn-primary btn-lg">Записаться на поток</button>
-              <button className="btn btn-outline btn-lg">Посмотреть программу</button>
-            </div>
-            <div className="hero-meta">
-              <span>8 недель, онлайн</span>
-              <span>Формат: видео, практики, созвоны</span>
-              <span>Для СЕО, продактов и тимлидов</span>
-            </div>
-          </div>
-          <div className="hero-card">
-            <h2>Что вы унесёте с курса</h2>
-            <ul>
-              <li>Понимание, как устроены современные продукты и код</li>
-              <li>Общий язык с разработчиками и продактом</li>
-              <li>Инструменты для декомпозиции и приоритизации</li>
-              <li>Личный мини‑проект, собранный по итогам курса</li>
-            </ul>
+          <h1>
+            Превращайте идеи в <span className="gradient-text">продукты</span> силой своего вайба
+          </h1>
+          <p>
+            Vibe-coding — это революция, где знание синтаксиса больше не барьер.
+            Мы научим вас управлять ИИ-агентами, чтобы создавать софт со скоростью мысли.
+          </p>
+          <div className="cta-group">
+            <button className="btn-primary">Начать обучение</button>
+            <button className="btn-secondary">Посмотреть демо</button>
           </div>
         </section>
 
-        <section id="for-whom" className="section">
-          <div className="section-header">
-            <h2>Для кого этот курс</h2>
-            <p>
-              Курс «Vibe Code Leaders» специально собран для руководителей, которые
-              хотят лучше понимать разработки и собирать сильные продуктовые
-              команды.
-            </p>
+        {/* MARQUEE SECTION */}
+        <section className="marquee-container">
+          <div className="marquee-track">
+            {marqueeQuotes.map((quote, idx) => (
+              <div key={idx} className="quote-card">
+                <p>«{quote.q}»</p>
+                <div className="quote-author">
+                  <span className="name">{quote.a}</span>
+                  <span className="role">{quote.r}</span>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="grid grid-3">
-            <div className="card">
-              <h3>Руководители бизнеса</h3>
-              <p>Предприниматели и C‑level, которые работают с IT‑командами.</p>
-              <ul>
-                <li>Хотите осознанно заказывать разработку</li>
-                <li>Устали от «мы так не делаем в проде»</li>
-              </ul>
+        </section>
+
+        {/* CONCIERGE SECTION */}
+        <section id="concierge" className="concierge">
+          <div className="concierge-grid">
+            <div className="concierge-text">
+              <h2>Мы проведем вас <span className="gradient-text">за руку</span></h2>
+              <p>
+                Никакой технической боли. Мы берем на себя всю «грязную» работу,
+                чтобы вы могли сосредоточиться на созидании.
+              </p>
+              <button className="btn-secondary">Узнать больше о поддержке</button>
             </div>
-            <div className="card">
-              <h3>Продуктовые менеджеры</h3>
-              <p>Руководители продуктов и проектов в digital‑командах.</p>
-              <ul>
-                <li>Хотите лучше понимать ограничения и риски</li>
-                <li>Строить реалистичные роадмапы</li>
-              </ul>
-            </div>
-            <div className="card">
-              <h3>Тимлиды и руководители команд</h3>
-              <p>Лидеры кросс‑функциональных команд, которые растут в роли.</p>
-              <ul>
-                <li>Нужно сильнее «продуктовое» мышление</li>
-                <li>Важно выстраивать понятную архитектуру решения</li>
-              </ul>
+            <div className="step-list">
+              <div className="step-item">
+                <span className="step-num">01</span>
+                <div className="step-info">
+                  <h3>Инфраструктура под ключ</h3>
+                  <p>Настройка VPN, регистрация во всех ИИ-сервисах и выпуск зарубежных карт для оплаты.</p>
+                </div>
+              </div>
+              <div className="step-item">
+                <span className="step-num">02</span>
+                <div className="step-info">
+                  <h3>Личный куратор-агент</h3>
+                  <p>Помогаем внедрить ИИ-агентов в ваш реальный бизнес-кейс с первого дня.</p>
+                </div>
+              </div>
+              <div className="step-item">
+                <span className="step-num">03</span>
+                <div className="step-info">
+                  <h3>Сообщество лидеров</h3>
+                  <p>Доступ в закрытый клуб руководителей, которые уже меняют свои индустрии.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="results" className="section section-muted">
-          <div className="section-header">
-            <h2>Что вы получите после курса</h2>
+        {/* PROGRAM SECTION */}
+        <section id="program" className="program">
+          <div className="section-title">
+            <h2>Программа <span className="gradient-text">революции</span></h2>
           </div>
-          <div className="grid grid-3">
-            <div className="card card-soft">
-              <h3>Новый способ думать про задачи</h3>
-              <p>
-                Научитесь декомпозировать запросы бизнеса в четкие требования,
-                похожие на технические задачи.
-              </p>
+          <div className="program-grid">
+            <div className="program-card">
+              <span className="module-num">Модуль 1</span>
+              <h3>Мышление ИИ-архитектора</h3>
+              <p>Как декомпозировать мечту в технический вайб, понятный агентам.</p>
             </div>
-            <div className="card card-soft">
-              <h3>Язык общения с разработчиками</h3>
-              <p>
-                Поймете базовые конструкции кода, архитектуры и сможете задавать
-                правильные вопросы команде.
-              </p>
+            <div className="program-card">
+              <span className="module-num">Модуль 2</span>
+              <h3>Оркестрация агентов</h3>
+              <p>Настройка и управление автономными командами ИИ-разработчиков.</p>
             </div>
-            <div className="card card-soft">
-              <h3>Личный «кодовый» майндсет</h3>
-              <p>
-                Перейдёте от Micromanagement к системному управлению через процессы
-                и структуры.
-              </p>
+            <div className="program-card">
+              <span className="module-num">Модуль 3</span>
+              <h3>Продукт за выходные</h3>
+              <p>От пустой папки до работающего SaaS-решения за 48 часов.</p>
             </div>
           </div>
         </section>
 
-        <section id="program" className="section">
-          <div className="section-header">
-            <h2>Программа курса</h2>
-            <p>8 модулей, которые постепенно проводят вас от основ к практике.</p>
+        {/* PRICING SECTION */}
+        <section id="pricing" className="pricing">
+          <div className="section-title">
+            <h2>Выберите свой <span className="gradient-text">темп</span></h2>
           </div>
-          <div className="program-list">
-            <details open>
-              <summary>
-                Модуль 1. Как думают разработчики
-                <span>1 неделя</span>
-              </summary>
-              <p>
-                Разбираем базовые понятия из программирования и то, как инженеры
-                принимают решения. Учимся переводить бизнес‑задачи в структуры.
-              </p>
-            </details>
-            <details>
-              <summary>
-                Модуль 2. Архитектура продукта простыми словами
-                <span>1 неделя</span>
-              </summary>
-              <p>
-                Картина мира: фронтенд, бэкенд, базы данных, интеграции. Как это
-                связано с рисками, сроками и бюджетом.
-              </p>
-            </details>
-            <details>
-              <summary>
-                Модуль 3. Как ставить задачи, чтобы их реально сделали
-                <span>1 неделя</span>
-              </summary>
-              <p>
-                Структура хорошего запроса: контекст, ограничения, критерии
-                готовности, риски. Живые примеры постановки задач.
-              </p>
-            </details>
-            <details>
-              <summary>
-                Модуль 4. Декомпозиция и приоритизация
-                <span>1 неделя</span>
-              </summary>
-              <p>
-                Разбиваем большие идеи на реализуемые куски, считаем стоимость
-                изменений и выбираем, что делать в первую очередь.
-              </p>
-            </details>
-            <details>
-              <summary>
-                Модуль 5–8. Практика и личный проект
-                <span>4 недели</span>
-              </summary>
-              <p>
-                Работа над своим кейсом: от формулировки цели до структуры
-                решения. Наставничество, разборы и обратная связь.
-              </p>
-            </details>
-          </div>
-        </section>
-
-        <section id="pricing" className="section section-muted">
-          <div className="section-header">
-            <h2>Тарифы и формат участия</h2>
-            <p>Выберите формат, который лучше всего подходит под ваши задачи.</p>
-          </div>
-          <div className="grid grid-3">
-            <div className="card card-pricing">
+          <div className="pricing-grid">
+            <div className="price-card">
               <h3>Базовый</h3>
-              <p className="price">50 000 ₽</p>
-              <ul>
-                <li>Доступ ко всем материалам курса</li>
-                <li>Домашние задания и шаблоны</li>
-                <li>Доступ к записи на 6 месяцев</li>
+              <div className="price-val">49 000 ₽</div>
+              <ul className="price-features">
+                <li>Доступ ко всем видео-урокам</li>
+                <li>Библиотека промптов и шаблонов</li>
+                <li>Доступ в общий чат</li>
               </ul>
-              <button className="btn btn-outline full-width">Выбрать тариф</button>
+              <button className="btn-secondary full-width">Выбрать</button>
             </div>
-            <div className="card card-pricing card-pricing-featured">
+            <div className="price-card featured">
               <h3>Расширенный</h3>
-              <p className="price">75 000 ₽</p>
-              <ul>
-                <li>Все из базового тарифа</li>
-                <li>Групповые созвоны с разбором кейсов</li>
-                <li>Чат с куратором на время курса</li>
+              <div className="price-val">89 000 ₽</div>
+              <ul className="price-features">
+                <li>Всё из Базового</li>
+                <li><strong>Консьерж-сервис: VPN, Карты, Soft</strong></li>
+                <li>Еженедельные мастермайнды</li>
               </ul>
-              <button className="btn btn-primary full-width">Записаться</button>
+              <button className="btn-primary full-width">Записаться</button>
             </div>
-            <div className="card card-pricing">
-              <h3>Премиум</h3>
-              <p className="price">120 000 ₽</p>
-              <ul>
-                <li>Все из расширенного тарифа</li>
-                <li>Индивидуальные сессии с автором курса</li>
-                <li>Разбор вашей команды и процессов</li>
+            <div className="price-card">
+              <h3>VIP Консалтинг</h3>
+              <div className="price-val">199 000 ₽</div>
+              <ul className="price-features">
+                <li>Всё из Расширенного</li>
+                <li>Персональное внедрение в ваш бизнес</li>
+                <li>Личные созвоны с основателями</li>
               </ul>
-              <button className="btn btn-outline full-width">Забронировать слот</button>
+              <button className="btn-secondary full-width">Забронировать</button>
             </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="section-header">
-            <h2>Отзывы участников</h2>
-            <p>Несколько живых впечатлений от руководителей, которые уже прошли курс.</p>
-          </div>
-          <div className="grid grid-3">
-            <div className="card card-soft">
-              <p className="quote">
-                «После курса диалоги с разработкой стали в два раза короче. Мы наконец‑то
-                говорим об одном и том же языком ограничений и решений.»
-              </p>
-              <p className="quote-author">— Анна, CEO продуктовой компании</p>
-            </div>
-            <div className="card card-soft">
-              <p className="quote">
-                «Стал лучше понимать, когда команда тянет время, а когда действительно
-                есть сложность в архитектуре. Это сильно влияет на решения.»
-              </p>
-              <p className="quote-author">— Сергей, руководитель направления</p>
-            </div>
-            <div className="card card-soft">
-              <p className="quote">
-                «Я впервые почувствовал, что код — это не магия, а просто другой способ
-                описывать логику бизнеса. Очень освобождающее ощущение.»
-              </p>
-              <p className="quote-author">— Мария, продакт‑менеджер</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="faq" className="section section-muted">
-          <div className="section-header">
-            <h2>Частые вопросы</h2>
-          </div>
-          <div className="faq-list">
-            <details>
-              <summary>Нужно ли уметь программировать, чтобы идти на курс?</summary>
-              <p>
-                Нет. Курс рассчитан на людей без технического бэкграунда. Мы даём
-                столько кода, сколько нужно для понимания логики и решений.
-              </p>
-            </details>
-            <details>
-              <summary>Сколько времени в неделю потребуется?</summary>
-              <p>
-                В среднем 3–5 часов в неделю: теория, практика и разборы. Вы можете
-                подстраивать темп под свой график.
-              </p>
-            </details>
-            <details>
-              <summary>Будет ли личная работа с моим кейсом?</summary>
-              <p>
-                Да, в расширенном и премиум тарифах мы работаем с вашими реальными
-                задачами и разбираем их на практике.
-              </p>
-            </details>
           </div>
         </section>
       </main>
 
       <footer className="footer">
-        <div className="footer-left">
-          <span className="brand-name">Vibe Code Leaders</span>
-          <span className="footer-copy">© {new Date().getFullYear()} Все права защищены</span>
-        </div>
+        <div className="logo">VibeCode Leaders</div>
         <div className="footer-links">
-          <a href="#privacy">Политика конфиденциальности</a>
-          <a href="#offer">Публичная оферта</a>
+          <span>© 2026 Все права защищены</span>
         </div>
       </footer>
     </div>
